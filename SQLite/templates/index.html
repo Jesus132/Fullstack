@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+<script type="text/javascript" src="{{ url_for('static', filename='js/main.js')}}"></script>
+
+<body class="large-screen">
+  <div class="wrap">
+    <div class="btn-toolbar buttons">
+      <div class="btn-group">
+        <button id="desktop" class="btn btn-primary" onclick="location.href='/api/v1/users/'">
+        <i class="fa fa-desktop" aria-hidden="true"></i>
+        API
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <table class="table-responsive card-list-table">
+        <thead>
+          <tr>
+            <th> </th>
+            <th>First Name</th>
+				    <th>Last Name</th>
+				    <th>User Name</th>
+			    	<th>Email</th>
+				    <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for fila in matriz %}
+			    <tr>
+			    	{% for item in fila %}
+			        <td> {{ item }} </td>
+			    	{% endfor %}
+			    </tr>
+			    {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
